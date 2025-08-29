@@ -153,6 +153,16 @@ Your markdown content here...
 </div>
 ```
 
+#### Converting Jupyter Notebooks
+
+For convenience, a Python script is provided to help convert basic Jupyter notebooks:
+
+```bash
+python convert_notebook.py your_notebook.ipynb _posts/2024-12-19-your-post.md
+```
+
+**Note:** This converter handles basic cells. For notebooks with complex outputs (plots, widgets, etc.), manual conversion may be needed.
+
 ## Deployment
 
 This site is automatically deployed to GitHub Pages when changes are pushed to the main branch. No additional configuration is required.
