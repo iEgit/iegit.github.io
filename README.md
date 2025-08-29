@@ -92,6 +92,77 @@ excerpt: "Brief description of the post content"
 Your post content in Markdown format goes here...
 ```
 
+### Mathematical Expressions
+
+The blog now supports LaTeX mathematical expressions using KaTeX. You can use both inline and block math:
+
+#### Inline Math
+```markdown
+The equation $E = mc^2$ is famous.
+```
+
+#### Block Math
+```markdown
+$$
+\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+$$
+```
+
+### Jupyter Notebook Posts
+
+For data science and analysis posts, you can use the special `notebook` layout:
+
+```markdown
+---
+layout: notebook
+title: "Your Notebook Post"
+date: YYYY-MM-DD HH:MM:SS +0000
+categories: data-science python
+author: Author Name
+notebook_url: "https://github.com/your-repo/notebook.ipynb"
+---
+```
+
+#### Notebook Cell Structure
+
+Use these HTML structures to create notebook-style cells:
+
+**Code Cell:**
+```html
+<div class="cell code-cell">
+<div class="cell-input">
+<div class="prompt in-prompt" data-count="1"></div>
+<pre><code class="language-python">
+# Your Python code here
+import pandas as pd
+</code></pre>
+</div>
+<div class="cell-output text-output">
+<div class="prompt out-prompt" data-count="1"></div>
+<pre>Output text here</pre>
+</div>
+</div>
+```
+
+**Markdown Cell:**
+```html
+<div class="cell markdown-cell">
+<div class="cell-input">
+Your markdown content here...
+</div>
+</div>
+```
+
+#### Converting Jupyter Notebooks
+
+For convenience, a Python script is provided to help convert basic Jupyter notebooks:
+
+```bash
+python convert_notebook.py your_notebook.ipynb _posts/2024-12-19-your-post.md
+```
+
+**Note:** This converter handles basic cells. For notebooks with complex outputs (plots, widgets, etc.), manual conversion may be needed.
+
 ## Deployment
 
 This site is automatically deployed to GitHub Pages when changes are pushed to the main branch. No additional configuration is required.
@@ -127,6 +198,8 @@ To use a custom domain:
 - **Code Highlighting**: Syntax highlighting for code blocks
 - **Archive Page**: Chronological listing of all posts
 - **Category Support**: Organize posts by categories
+- **Mathematical Expressions**: KaTeX support for rendering LaTeX math expressions
+- **Jupyter Notebook Support**: Special layout and styling for notebook-style posts
 
 ## Contributing
 

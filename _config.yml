@@ -11,6 +11,14 @@ url: "https://iegit.github.io" # the base hostname & protocol for your site
 markdown: kramdown
 highlighter: rouge
 
+# Kramdown settings
+kramdown:
+  math_engine: katex
+  math_engine_opts:
+    preview: true
+  input: GFM
+  syntax_highlighter: rouge
+
 # Collections
 collections:
   posts:
