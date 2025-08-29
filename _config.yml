@@ -1,0 +1,43 @@
+# Site settings
+title: iEgit Blog
+email: your-email@example.com
+description: >-
+  Welcome to the iEgit blog! This is a place to share thoughts, ideas, 
+  and insights about development, technology, and more.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://iegit.github.io" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:categories/:year/:month/:day/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "iEgit"
+
+# Plugins (GitHub Pages compatible)
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
