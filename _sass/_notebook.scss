@@ -1,0 +1,167 @@
+/**
+ * Jupyter Notebook styles
+ */
+
+.notebook-post {
+  .notebook-link {
+    color: #2a7ae4;
+    text-decoration: none;
+    font-weight: 500;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.notebook-content {
+  /* Jupyter cell styling */
+  .cell {
+    margin-bottom: 20px;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    
+    &.code-cell {
+      background-color: #f8f8f8;
+    }
+    
+    &.markdown-cell {
+      background-color: #ffffff;
+    }
+  }
+  
+  .cell-input {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e8e8e8;
+    background-color: #f8f8f8;
+    
+    .prompt {
+      color: #666;
+      font-family: monospace;
+      font-size: 12px;
+      margin-bottom: 5px;
+      
+      &.in-prompt::before {
+        content: "In [" attr(data-count) "]:";
+      }
+      
+      &.out-prompt::before {
+        content: "Out[" attr(data-count) "]:";
+      }
+    }
+    
+    pre {
+      margin: 0;
+      background: transparent;
+      border: none;
+      padding: 0;
+    }
+    
+    code {
+      background: transparent;
+      border: none;
+      padding: 0;
+    }
+  }
+  
+  .cell-output {
+    padding: 10px 15px;
+    
+    &.text-output {
+      font-family: monospace;
+      white-space: pre-wrap;
+      background-color: #ffffff;
+    }
+    
+    &.html-output {
+      background-color: #ffffff;
+    }
+    
+    &.image-output {
+      text-align: center;
+      background-color: #ffffff;
+      
+      img {
+        max-width: 100%;
+        height: auto;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+    }
+    
+    &.error-output {
+      background-color: #fff5f5;
+      color: #d73a49;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+  }
+  
+  /* Jupyter-style tables */
+  .dataframe {
+    border-collapse: collapse;
+    margin: 15px 0;
+    width: 100%;
+    
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    
+    th {
+      background-color: #f8f9fa;
+      font-weight: bold;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+    
+    tr:hover {
+      background-color: #e8f4f8;
+    }
+  }
+  
+  /* Jupyter plot outputs */
+  .plot-container {
+    text-align: center;
+    margin: 20px 0;
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+  }
+  
+  /* Code execution counter styling */
+  .execution-count {
+    color: #666;
+    font-family: monospace;
+    font-size: 12px;
+    min-width: 60px;
+    text-align: right;
+    margin-right: 10px;
+    vertical-align: top;
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+  .notebook-content {
+    .cell-input, .cell-output {
+      padding: 8px 10px;
+    }
+    
+    .dataframe {
+      font-size: 14px;
+      
+      th, td {
+        padding: 6px 8px;
+      }
+    }
+  }
+}
